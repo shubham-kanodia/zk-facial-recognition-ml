@@ -56,6 +56,7 @@ shape = snark_weights_arr.shape
 
 weights_file = open("../data/snark-data/snark_weights.txt", "w")
 biases_file = open("../data/snark-data/snark_biases.txt", "w")
+sample_input_file = open("../data/snark-data/input.txt", "w")
 
 weights_file.write("[" + "\n")
 for i in range(0, shape[0]):
@@ -66,3 +67,7 @@ weights_file.write("]")
 snark_biases_arr = snark_biases.numpy()
 biases_line = ",".join(map(lambda x: str(int(x)), snark_biases_arr))
 biases_file.write("[" + biases_line + "]")
+
+sample_input = zk_classifier_model(torch.Tensor(embeds).unsqueeze(0)).detach().numpy()[0]
+inputs_line = ",".join(map(lambda x: str(int(x)), sample_input))
+sample_input_file.write("[" + inputs_line + "]")
