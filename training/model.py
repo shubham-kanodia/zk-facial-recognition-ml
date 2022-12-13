@@ -7,7 +7,7 @@ class ClassifierModel(nn.Module):
         super(ClassifierModel, self).__init__()
         self.fc1 = nn.Linear(512, 256)
         self.fc2 = nn.Linear(256, 84)
-        self.fc3 = nn.Linear(84, 15)
+        self.fc3 = nn.Linear(84, 16)
 
     def forward(self, x):
         x = F.relu(self.fc1(x))
