@@ -23,7 +23,7 @@ generator = Generator()
 @app.post("/embeddings")
 async def get_embeddings(file: UploadFile = File(...)):
     request_object_content = await file.read()
-    image = Image.open(io.BytesIO(request_object_content)).convert("RGB")
+    image = Image.open(io.BytesIO(request_object_content))
     embeddings = [float(_) for _ in generator.generate(image)]
 
     return {"embeddings": embeddings}

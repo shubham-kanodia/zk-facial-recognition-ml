@@ -19,6 +19,7 @@ class Generator:
         self.resnet = InceptionResnetV1(pretrained='vggface2').eval().to(self.device)
 
     def generate(self, image):
+        image = image.convert("RGB")
         img_cropped = self.mtcnn(image)
         img_embedding = self.resnet(img_cropped.unsqueeze(0)).detach().numpy()
 
