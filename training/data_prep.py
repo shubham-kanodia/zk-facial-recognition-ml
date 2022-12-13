@@ -39,7 +39,7 @@ train_image_paths = []
 test_image_paths = []
 
 
-for subject_number in range(1, 16):
+for subject_number in range(1, 17):
     subject_image_paths = get_subject_image_paths(subject_number)
 
     subject_test_image_paths = random.sample(subject_image_paths, 2)
