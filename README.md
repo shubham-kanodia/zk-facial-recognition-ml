@@ -23,6 +23,8 @@ Download the **Yale Face Database** from https://www.kaggle.com/datasets/olgabel
 - Copy the generated onnx model to the frontend
 
 **Note:**
-Run the below line if you face the **no module named "xyz"** issue
+Use the below fix if you face the **no module named "xyz"** issue
 
-export PYTHONPATH=$PYTHONPATH:`pwd`
+* You need to add the root directory to your python path
+* If using pycharm you can set the root directory as source path by right clicking the directory and selecting `Sources Root` under `Mark Directory as` 
+* Run all python commands from the root directory itself
